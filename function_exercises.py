@@ -66,7 +66,111 @@ def cap_first_letter(some_word):
         return False
 
 print(cap_first_letter(input('Type a word please.\n')))
+
+
 ####################################################################################################
 #######################################       FIVE      ############################################
 ####################################################################################################
     
+def calculate_tip(tip_size,bill):
+    tip_size *= 0.01
+    tip = tip_size*bill
+    tip = '$'+str(tip)
+    return tip
+
+print(calculate_tip(30, 100))
+
+
+####################################################################################################
+#######################################       SIX       ############################################
+####################################################################################################
+
+
+def apply_discount(original_price,discount_percent):
+    return original_price-(discount_percent*0.01*original_price)
+
+print(apply_discount(100,40))
+
+
+####################################################################################################
+#######################################      SEVEN      ############################################
+####################################################################################################
+
+def handle_commas(big_number):
+    new_number = ''
+    #iterations= len(big_number)
+    for i in range(len(big_number)):
+        if big_number[i] == ',':
+            continue
+        else: 
+            new_number += big_number[i]
+            
+    return new_number
+
+#     if type(big_number) == str:
+#         return int(big_number.replace(',',''))
+#     else:
+#         return fakenum
+# 
+# print(handle_commas('12,000,000'))
+# 
+
+
+####################################################################################################
+#######################################      Eight      ############################################
+####################################################################################################
+
+
+# def get_letter_grade(grade_number):
+#     grades = {
+#         'A' : [list(range(90,100)],
+#         'B' : [list(range(80,90))],
+#         'C' : list(range(70,80)),
+#         'D' : list(range(60,70)),
+#         'F' : list(range( 0,60))
+#                    }
+#     grade_letter = {i for i in grades if grades[i] == grade_number}
+#     print(grade_letter)
+#     return grade_letter
+
+def get_letter_grade(grade_number):
+    if grade_number >= 90:
+        return 'A'
+    elif grade_number >= 80:
+        return 'B'
+    elif grade_number >= 70:
+        return 'C'
+    elif grade_number >= 60:
+        return 'D'
+    else:
+        return 'F'
+    
+get_letter_grade(73)
+
+
+####################################################################################################
+#######################################      Nine       ############################################
+####################################################################################################
+
+def remove_vowels(some_word):
+    new_word =''
+    for letter in some_word:
+        if not is_vowel(letter):
+            new_word += letter
+    return new_word
+
+remove_vowels('Adonai')
+
+
+####################################################################################################
+#######################################       Ten       ############################################
+####################################################################################################
+
+def cumulative_sum(list_of_numbers):
+    new_list = []
+    for n in range(1,len(list_of_numbers)+1):
+        running_tally = sum(list_of_numbers[:n])
+        new_list.append(running_tally)
+    return new_list
+
+cumulative_sum([3,2,6,8,2,5,1])
